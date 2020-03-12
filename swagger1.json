@@ -1,0 +1,516 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Yet Another Node.js Blogg Application API",
+      "description": "Yet Another Node.js Blogg Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/saveuser": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "/loguser": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+
+
+
+      "/toklogin": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "auth-token",
+              "in": "header",
+              "description": "User that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+        "/saveadmin": {
+        "post": {
+          "tags": [
+            "admin"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "admin",
+              "in": "body",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        }
+      },
+      "/logadmin": {
+        "post": {
+          "tags": [
+            "admin"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "admin",
+              "in": "body",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        }
+        
+      },
+
+
+
+      "/tokadmin": {
+        "get": {
+          "tags": [
+            "admin"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "admin-token",
+              "in": "header",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/admin"
+              }
+            }
+          }
+        }
+        
+      },
+
+       "/saveproduct": {
+        "post": {
+          "tags": [
+            "product"
+          ],
+          "description": "Create products in system",
+          "parameters": [
+            {
+              "name": "price",
+              "in": "formdata",
+             "type":"string"
+              
+            },
+            {
+                "name": "picture",
+                "in": "formdata",
+               "type":"file"
+                
+              },
+              {
+                "name": "pname",
+                "in": "formdata",
+               "type":"string"
+                
+              },
+              {
+                "name": "category",
+                "in": "formdata",
+               "type":"string"
+                
+              }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+           
+          }
+        }
+        
+      },
+      "/updateproduct": {
+        "post": {
+          "tags": [
+            "product"
+          ],
+          "description": "update products in system",
+          "parameters": [
+            {
+              "name": "products",
+              "in": "body",
+              "description": "products that we want to update",                                                   
+              "schema": {
+                "$ref": "#/definitions/product"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "product is updated",
+              "schema": {
+                "$ref": "#/definitions/product"
+              }
+            }
+          }
+        }
+       
+        
+      },
+      
+      "/savecategory": {
+        "post": {
+          "tags": [
+            "category"
+          ],
+          "description": "Create new category in system",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "body",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/category"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": " created",
+              "schema": {
+                "$ref": "#/definitions/category"
+              }
+            }
+          }
+        }
+        
+      },
+      "/savecart": {
+        "post": {
+          "tags": [
+            "cart"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "cart",
+              "in": "body",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/cartSchema"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/cartSchema"
+              }
+            }
+          }
+        }
+        
+      },
+        "/viewcart": {
+        "get": {
+          "tags": [
+            "cart"
+          ],
+          "description": "Create new admin in system",
+          "parameters": [
+            {
+              "name": "cart",
+              "in": "body",
+              "description": "admin that we want to create",                                                   
+              "schema": {
+                "$ref": "#/definitions/cart"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created",
+              "schema": {
+                "$ref": "#/definitions/cart"
+              }
+            }
+          }
+        }
+        
+      },
+      "/viewcategory": {
+        "post": {
+          "tags": [
+            "VIEW"
+          ],
+          "description": "View here..",
+          "parameters": [
+            {
+              "name":"authorization",
+              "in":"header"
+
+            },
+            {
+              "name": "view",
+              "in": "body",
+              "description": "admin that we want to create"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New admin is created"
+            }
+          }
+        }
+        
+      }
+      
+},
+    
+    "definitions": {
+      "User": {
+        "required": [
+          "Emailid",
+          "password"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string"
+            
+          },
+          "emailid": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "password": {
+            "type": "string"
+          },
+          "phoneno": {
+            "type": "string"
+          }
+        }
+      },
+      "admin":{
+        "required":[
+           "emailid",
+            "password"
+      ],
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "emailid": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+          
+      }
+    },
+    "product": {
+      "required": [
+        "pname",
+        "price"
+        
+      ],
+      "properties": {
+        "price": {
+          "type": "string"
+          
+        },
+        "picture": {
+          "type": "string",
+          "uniqueItems": "true"
+        },
+        "pname": {
+          "type": "string"
+        },
+        "category":{
+          "type":"string"
+        }
+       
+      }
+    },
+    "category":{
+      "required": [
+        "categoryname"
+      ],
+      "properties":{
+    
+      "categoryname":{
+        "type" : "string"
+      }
+      }
+    
+    },
+    "cartSchema":{
+        "required":[
+            "quantity",
+             "productid",
+             "price"
+        ],
+
+        "properties": {
+            "quantity": {
+              "type": "string"
+              
+            },
+            "productid": {
+              "type": "string",
+              "uniqueItems": true
+            },
+            "price": {
+              "type": "string"
+            }
+           
+          },
+          "product" :[{
+            "type":"mongoose.Schema.Types.ObjectId",
+            "ref":"productdata",
+            "required":true
+        }]
+    }
+
+
+  }
+  }
